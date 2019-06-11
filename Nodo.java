@@ -6,7 +6,7 @@ public class Nodo {
     // Nodo constructor
     public Nodo(int dato) {
         enlace = null;
-        dato = valor;
+        this.dato = dato;
     }
     // Constructor que incluye el siguiente nodo
     public Nodo(int valor, Nodo referencia) {

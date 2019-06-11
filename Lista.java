@@ -5,21 +5,27 @@ public class Lista {
  
     // constructor
     public Lista() {
-        head = null;
-        tamanio = 0;
+        this.head = null;
+        this.tamanio = 0;
     }
     public boolean listaVacia(){
         return head == null;
     }
      // Agrega el nodo al final de la lista.
     public void add(int dato){
+        System.out.println("hola");
         Nodo nuevo = new Nodo(dato);
-        Nodo aux = head;
-        while (aux.getEnlace() != null) {
-            aux = aux.getEnlace();
+        if(head == null){
+            head = nuevo;
+        }else{
+            Nodo aux = head;
+            while(aux.getEnlace() != null ){
+                aux = aux.getEnlace();
+            }
+            aux.setEnlace(nuevo);
+            System.out.println("me agregue");
+            this.tamanio ++;
         }
-        aux.setEnlace(nuevo);
-        tamanio++;
     }
     public void listar(){
         if (!listaVacia()) {
